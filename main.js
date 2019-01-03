@@ -23,6 +23,9 @@ easyBtn.addEventListener("click", function(){
             squares[i].style.display = "none"; 
         }
     }
+    h1.style.backgroundColor = "steelblue";
+    messageDisplay.textContent = ""; 
+    resetButton.textContent = "New Colors"; 
 });
 
 hardBtn.addEventListener("click", function(){
@@ -35,17 +38,22 @@ hardBtn.addEventListener("click", function(){
     for(var i = 0; i < squares.length; i++) {
         squares[i].style.backgroundColor = colors[i];
         squares[i].style.display = "block"; 
-        }    
+    }    
+    h1.style.backgroundColor = "steelblue"; 
+    messageDisplay.textContent = "";  
+    resetButton.textContent = "New Colors";
 });
 
 resetButton.addEventListener("click", function(){
+    messageDisplay.textContent = "";
     colors = generateRandomColors(numSquares);
     pickedColor = pickColor();
     colorDisplay.textContent = pickedColor;
     for(var i = 0; i < squares.length; i++) {
         squares[i].style.backgroundColor = colors[i];
     }
-    h1.style.backgroundColor = "#232323";
+    h1.style.backgroundColor = "steelblue";
+    resetButton.textContent = "New Colors";
 });
 
 colorDisplay.textContent = pickedColor;
